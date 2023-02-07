@@ -1,0 +1,35 @@
+{%  extends "./base.html"%}
+
+{%block title %} Gestion de Cursos {% endblock %}
+
+{% block body%}
+<div class="row">
+    <div class="col-md-4 offset-md-4"></div>
+    <h2>edicioncurso</h2>
+    <div class="card ">
+        <div class="card-body">
+            <form action="/editarcurso1/" method="POST">{% csrf_token %}
+                <div class="form-group py-2">
+                    <input type="text" id="txtcodigo1" value="{{curso1.codigo1}}" name="txtcodigo1" clas="form-control" 
+                        placeholder="codigo" minlength="6" maxlength="10" readonly required>
+                </div>
+                <div class="form-group py-2">
+                    <input type="text" id="txtnombre1" value="{{curso1.nombre1}}" name="txtnombre1" clas="form-control" 
+                        placeholder="nombre"  maxlength="69" required>
+                </div>
+                <div class="form-group py-2">
+                    <input type="text" id="txtcreditos1"  value="{{curso1.creditos1}}" name="txtcreditos1" clas="form-control" 
+                        minlength="1" maxlength="5" value="1" required>
+                </div>
+                    <div class="form-group py-2">
+                    <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

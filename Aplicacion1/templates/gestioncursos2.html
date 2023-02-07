@@ -1,0 +1,74 @@
+{%  extends "./base.html"%}
+
+{%block title %} Gestion de Cursos {% endblock %}
+
+{% block body%}
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <h2>Formulario</h2>
+        <div class="card ">
+            <div class="card-body">
+                <form action="/registrarcurso2" method="POST">{% csrf_token %}
+                    <div class="form-group py-2">
+                        <input type="text" id="txtcodigo2" name="txtcodigo2" clas="form-control" 
+                            placeholder="codigo1" minlength="3" maxlength="10" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="text" id="txtnombre2" name="txtnombre2" clas="form-control" 
+                            placeholder="nombre1"  maxlength="69" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="text" id="txtcreditos2" name="txtcreditos2" clas="form-control" 
+                            minlength="1" maxlength="5" value="1" required>
+                    </div>
+                        <div class="form-group py-2">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+
+     </div>
+
+     <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1>Listado de Cursos</h1>
+
+        <div class="table-responsive py-2">
+            <table id="example" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Creditos</th>
+                        <th >Editar</th>
+                        <th >Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in curso2 %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{c.codigo2}}</td>
+                        <td>{{c.nombre2}}</td>
+                        <td>{{c.creditos2}}</td>
+                        <td><a href="edicioncurso2/{{c.codigo2}}" class="btn " style="background-color: aquamarine;">Editar</a></td>
+                        <td><a href="eliminarcurso2/{{c.codigo2}}" class="btn" style="background-color: red">Eliminar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
