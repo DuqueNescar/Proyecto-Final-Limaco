@@ -1,0 +1,65 @@
+{%  extends "index.html"%}
+
+{% load static %}
+
+{%block title %}
+
+Sobre Mi
+
+{% endblock %}
+
+
+{%block subtitle %} 
+
+Conoceme un poco mas
+
+{% endblock %}
+
+
+
+{% block descrip %}
+
+<div class="col-10 offset-1">
+    <table class="table table-bordered">
+        <thead class="text-light">
+            <tr>
+                <th width="50%" style="color: red;">Presentacion
+                </th>
+                <th width="50%" style="color: red;">Experiencia/Conocimiento
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="color: white;">
+                    Egresado de Ingeniería de Telecomunicaciones de la Universidad Nacional Mayor de San Marcos,.<br /> 
+                    soy una persona que le gusta estar en constante aprendizaje, responsable <br /> 
+                    y detallista, con facilidad de adaptación<br />
+                    
+                    
+                </td>
+                <td style="color: white;">
+                    Actualmente me encuentro relizando practicas profesionales en Claro Peru<br />
+                    Encargado de validación enlaces Mw ZTE - HUAWEI  <br />
+                    Apoyo en la creación de una plataforma web para el manejo de datos (Pagina Web  del Área)<br />
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+   
+<div class="team-member">
+    <img class="mx-3 rounded-circle"
+        style="width: 180px; height: 180px;"
+        src="{% static 'css/imagenes/ernesto.jpeg' %}" alt="..." />
+    <h5 class="my-2" style="color: white;">Ernesto Limaco</h5>
+    
+    <p class="text-danger  cumpleaños"
+        style="font-weight: bold">
+        17 de Julio</p>
+
+</div>
+
+
+{% endblock %}

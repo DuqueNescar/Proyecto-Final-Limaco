@@ -1,0 +1,33 @@
+{%  extends "index.html"%}
+
+{% load static %}
+
+{%block title %}
+
+Login
+
+{% endblock %}
+
+
+{%block subtitle %} 
+
+Ingresar datos
+
+{% endblock %}
+
+
+
+{% block body %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+    {{formulario.as_p}}
+
+ 
+    <button type="submit">Iniciar sesion</button>
+</form>
+   
+
+
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{%  extends "indexpadre.html"%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/aff6e53d6c.js" crossorigin="anonymous"></script>
+    <title>{%block title %}Pagina Principal {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="head" >
+
+        <a href= "{% url 'base' %}" class="logo">
+            <img src="{% static 'css/imagenes/logo.jpeg' %}" alt="" class="logo-img">
+        </a>
+
+        <nav class="navbar">
+            
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+            <a href="#">Salir</a>
+            
+
+        </nav>
+
+    </div>
+
+    <header class="content header">
+
+        <h2 class="title">{%block subtitle %} Bienvenidosa mi blog {% endblock %} </h2>
+        <p>{%block intitle %}{{mensaje}}{% endblock %} </p>
+        
+        <!--<a href="#" class="btn">Proyectos ADM RTN</a>--->
+
+    </header>
+
+    <section class="content sau">
+        
+        <div class="box-container">
+
+            <a href="{% url 'Registro' %}" class="box">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <h3>Matematica</h3>
+                
+            </a>
+
+            <a href="{% url 'Registro1' %}" class="box">
+                <i class="fa-solid fa-business-time"></i>
+                <h3>Fisica</h3>
+                
+            </a>
+
+            <a href="{% url 'Registro2' %}" class="box">
+                <i class="fa-solid fa-satellite-dish"></i>
+                <h3>Quimica</h3>
+               
+            </a>
+
+            
+        </div>
+
+
+        <div>
+        {% block body %}
+
+   
+        {% endblock %}
+        </div>
+
+        <div>
+        {% block descrip %}
+        
+           
+         {% endblock %}
+         </div>
+
+    </section>
+
+
+   
+
+    </section>
+
+    <section class="content contact">
+
+        <h2 class="title">Contacto</h2>
+
+        <div class="footer-section">
+
+            <div>
+                <p>+51 914842840</p>                
+            </div>
+
+            <div class="f-enlaces">
+                <a href="#">Inicio</a>
+                             
+            </div>
+
+            <div class="f-enlaces">
+                <a href="#">Inicio</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Contacto</a>
+                        
+            </div>
+
+            <figure>
+                <img src="{% static 'css/imagenes/logo.jpeg' %}" height="80px" width="100%" alt="">
+            </figure>
+    
+
+        </div>
+
+               
+    </section>
+
+</body>
+</html>

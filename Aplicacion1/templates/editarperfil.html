@@ -1,0 +1,36 @@
+{%  extends "index.html"%}
+
+{% load static %}
+
+{%block title %}
+
+Editar usuario
+
+{% endblock %}
+
+
+{%block subtitle %} 
+
+Aqui se edita el usuario
+
+
+
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<form action="" method="POST"> {% csrf_token %}
+
+    {{formulario.as_p}}
+
+ 
+    <button type="submit">Editar</button>
+</form>
+   
+
+
+
+{% endblock %}

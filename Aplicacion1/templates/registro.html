@@ -1,0 +1,34 @@
+{%  extends "index.html"%}
+
+{% load static %}
+
+{%block title %}
+
+Registro
+
+{% endblock %}
+
+
+{%block subtitle %} 
+
+Aqui podremos registrarnos
+
+{% endblock %}
+
+
+
+{% block body %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+    {{form.as_p}}
+
+ 
+    <button type="submit">registrar</button>
+
+</form>
+   
+
+
+
+{% endblock %}

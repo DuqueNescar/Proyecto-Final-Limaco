@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Curso(models.Model): 
@@ -27,3 +28,10 @@ class Curso2(models.Model):
     def __str__(self):
         texto = "{0} ({1})" #nombre y credito entre parentesis
         return texto.format(self.nombre2,self.creditos2)
+
+class avatar(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="avatares", null=True, blank=True)
+
+
+
